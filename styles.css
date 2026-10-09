@@ -306,11 +306,11 @@ h1, h2, h3 {
   margin-bottom: 0.25rem;
 }
 
-/* Word-by-word reveal */
+/* Word-by-word reveal (default visible so content is always displayed immediately) */
 .hero-word {
   display: inline-block;
-  opacity: 0;
-  transform: translateY(24px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 700ms var(--ease-standard), transform 700ms var(--ease-standard);
   margin-right: 0.28em;
 }
@@ -346,15 +346,15 @@ h1, h2, h3 {
   position: relative;
   width: 100%;
   max-width: 1440px;
-  height: clamp(520px, 50vw, 680px);
+  height: clamp(520px, 48vw, 680px);
   margin: 0 auto;
   z-index: 5;
 }
 
 .hero-student-item {
   position: absolute;
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 700ms var(--ease-standard), transform 700ms var(--ease-standard);
   will-change: transform, opacity;
   user-select: none;
@@ -375,13 +375,13 @@ h1, h2, h3 {
   pointer-events: none;
 }
 
-/* Soft flat oval ground shadow under every character */
+/* Soft flat oval ground shadow directly under character feet touching character */
 .student-shadow {
-  width: 75%;
-  height: 16px;
-  background: radial-gradient(ellipse at center, rgba(30, 20, 15, 0.18) 0%, rgba(30, 20, 15, 0) 70%);
+  width: 70%;
+  height: 12px;
+  background: radial-gradient(ellipse at center, rgba(30, 20, 15, 0.24) 0%, rgba(30, 20, 15, 0) 70%);
   border-radius: 50%;
-  margin-top: -8px;
+  margin-top: -6px; /* touches feet directly with zero gap */
   pointer-events: none;
   flex-shrink: 0;
 }
@@ -414,46 +414,47 @@ h1, h2, h3 {
   }
 }
 
-/* Desktop layout: strictly contained between 2% and 82% to avoid any cutoff at 1440px */
-/* Back layer (smaller, high up) */
-.student-pos-4  { left: 16%;  bottom: 30%; width: clamp(170px, 17vw, 240px); }
-.student-pos-7  { left: 34%;  bottom: 26%; width: clamp(190px, 19vw, 260px); }
-.student-pos-10 { left: 56%;  bottom: 32%; width: clamp(175px, 17vw, 240px); }
-.student-pos-12 { left: 74%;  bottom: 24%; width: clamp(180px, 18vw, 250px); }
+/* Desktop layout: spread across full width with 3% margin on both sides (3% to 97%), light depth overlap */
+/* Back layer (smaller, high up near headline, closing empty gap) */
+.student-pos-4  { left: 5%;  bottom: 44%; width: clamp(140px, 14vw, 200px); }
+.student-pos-7  { left: 38%; bottom: 43%; width: clamp(155px, 15vw, 220px); }
+.student-pos-12 { left: 76%; bottom: 43%; width: clamp(150px, 15vw, 215px); }
 
-/* Mid layer (medium scale) */
-.student-pos-3  { left: 10%;  bottom: 16%; width: clamp(200px, 20vw, 280px); }
-.student-pos-5  { left: 28%;  bottom: 12%; width: clamp(185px, 18vw, 260px); }
-.student-pos-9  { left: 48%;  bottom: 14%; width: clamp(205px, 20vw, 285px); }
-.student-pos-11 { left: 68%;  bottom: 10%; width: clamp(210px, 21vw, 295px); }
+/* Mid layer (medium scale, mid field) */
+.student-pos-3  { left: 14%; bottom: 22%; width: clamp(155px, 15vw, 220px); }
+.student-pos-5  { left: 38%; bottom: 24%; width: clamp(125px, 12vw, 180px); }
+.student-pos-9  { left: 62%; bottom: 21%; width: clamp(155px, 15vw, 220px); }
+.student-pos-11 { left: 81%; bottom: 18%; width: clamp(150px, 15vw, 215px); }
 
-/* Front layer (largest scale, forefront) */
-.student-pos-1  { left: 2%;   bottom: 2%;  width: clamp(230px, 23vw, 320px); }
-.student-pos-2  { left: 20%;  bottom: 0%;  width: clamp(250px, 25vw, 340px); }
-.student-pos-6  { left: 40%;  bottom: 1%;  width: clamp(240px, 24vw, 330px); }
-.student-pos-8  { left: 62%;  bottom: 2%;  width: clamp(235px, 23vw, 325px); }
+/* Front layer (largest scale, forefront, 3% left margin) */
+.student-pos-1  { left: 3%;  bottom: 2%;  width: clamp(180px, 18vw, 260px); }
+.student-pos-2  { left: 25%; bottom: 1%;  width: clamp(200px, 20vw, 290px); }
+.student-pos-6  { left: 49%; bottom: 2%;  width: clamp(175px, 17vw, 250px); }
+.student-pos-8  { left: 71%; bottom: 1%;  width: clamp(185px, 18vw, 265px); }
 
-/* Responsive layout: 390px mobile viewport without clipping */
+/* Responsive layout: 390px mobile viewport without clipping, 3% margin */
 @media (max-width: 768px) {
   .hero-students-field {
     height: 480px;
     max-width: 100%;
     overflow: hidden;
   }
-  .student-pos-4  { left: 2%;  bottom: 34%; width: 145px; }
-  .student-pos-7  { left: 26%; bottom: 32%; width: 155px; }
-  .student-pos-10 { left: 50%; bottom: 36%; width: 145px; }
-  .student-pos-12 { left: 68%; bottom: 30%; width: 145px; }
+  /* Back layer */
+  .student-pos-4  { left: 3%;  bottom: 48%; width: 105px; }
+  .student-pos-7  { left: 36%; bottom: 46%; width: 115px; }
+  .student-pos-12 { left: 71%; bottom: 47%; width: 105px; }
 
-  .student-pos-3  { left: 0%;  bottom: 18%; width: 165px; }
-  .student-pos-5  { left: 24%; bottom: 16%; width: 150px; }
-  .student-pos-9  { left: 46%; bottom: 18%; width: 160px; }
-  .student-pos-11 { left: 64%; bottom: 15%; width: 165px; }
+  /* Mid layer */
+  .student-pos-3  { left: 11%; bottom: 25%; width: 110px; }
+  .student-pos-5  { left: 35%; bottom: 27%; width: 95px; }
+  .student-pos-9  { left: 57%; bottom: 25%; width: 110px; }
+  .student-pos-11 { left: 74%; bottom: 24%; width: 100px; }
 
-  .student-pos-1  { left: -1%; bottom: 2%;  width: 185px; }
-  .student-pos-2  { left: 22%; bottom: 0%;  width: 195px; }
-  .student-pos-6  { left: 44%; bottom: 2%;  width: 185px; }
-  .student-pos-8  { left: 60%; bottom: 3%;  width: 185px; }
+  /* Front layer */
+  .student-pos-1  { left: 3%;  bottom: 2%;  width: 125px; }
+  .student-pos-2  { left: 24%; bottom: 1%;  width: 135px; }
+  .student-pos-6  { left: 47%; bottom: 2%;  width: 125px; }
+  .student-pos-8  { left: 67%; bottom: 1%;  width: 125px; }
 }
 
 /* ==========================================================================
@@ -523,32 +524,35 @@ h1, h2, h3 {
   stroke-width: 2.5;
 }
 
+/* Students supporting map: layer in FRONT of map (z-index: 10), hands flat against underside contour */
+.map-students-support {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; /* in FRONT of the map */
+  pointer-events: none;
+}
+
+.students-support-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
 /* Flat offset shadow under map */
 .map-ground-shadow {
   position: absolute;
   left: 8%;
-  bottom: -15px;
+  bottom: 0px;
   width: 84%;
   height: 24px;
   background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
-}
-
-/* Students supporting map: hands flat against underside, NO gap */
-.map-students-support {
-  position: relative;
-  width: 100%;
-  margin-top: -14%; /* hands touch underside with no gap */
-  z-index: 10;
-  pointer-events: none;
-}
-
-.students-support-img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 .map-story-content {

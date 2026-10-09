@@ -2,7 +2,7 @@
  * EdTech Nigeria Landing Page - Vanilla JavaScript
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function init() {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
@@ -67,42 +67,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroHeadline = document.getElementById('heroHeadline');
   const studentItems = document.querySelectorAll('.hero-student-item');
 
+  // Ensure all student items are marked entered immediately
+  studentItems.forEach(item => item.classList.add('is-entered'));
+
   if (heroHeadline) {
     const rawText = heroHeadline.textContent.trim();
-    const words = rawText.split(/\s+/);
-    heroHeadline.innerHTML = '';
+    if (!heroHeadline.querySelector('.hero-word')) {
+      const words = rawText.split(/\s+/);
+      heroHeadline.innerHTML = '';
 
-    words.forEach((word) => {
-      const span = document.createElement('span');
-      span.className = 'hero-word';
-      span.textContent = word;
-      heroHeadline.appendChild(span);
-    });
-
-    const wordSpans = heroHeadline.querySelectorAll('.hero-word');
-
-    if (prefersReducedMotion) {
-      wordSpans.forEach(span => span.classList.add('is-revealed'));
-      studentItems.forEach(item => item.classList.add('is-entered'));
-    } else {
-      wordSpans.forEach((span, index) => {
-        setTimeout(() => {
-          span.classList.add('is-revealed');
-        }, index * 70);
+      words.forEach((word) => {
+        const span = document.createElement('span');
+        span.className = 'hero-word is-revealed';
+        span.textContent = word;
+        heroHeadline.appendChild(span);
       });
-
-      const headlineLeadDuration = Math.max(200, wordSpans.length * 70 + 100);
-      setTimeout(() => {
-        studentItems.forEach((item, index) => {
-          setTimeout(() => {
-            item.classList.add('is-entered');
-            setTimeout(() => {
-              item.classList.add('has-idle');
-            }, 750);
-          }, index * 100);
-        });
-      }, headlineLeadDuration);
     }
+  }
+
+  // Stagger idle float animation
+  if (!prefersReducedMotion) {
+    studentItems.forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add('has-idle');
+      }, 300 + index * 60);
+    });
   }
 
   // Hero Mouse Parallax (4-14px shift; disabled on touch devices)
@@ -182,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ==========================================================================
      4. REVEAL BEHAVIORS: DEFAULT VISIBLE EVERYWHERE
-     Hidden state applies only once observer is running and element is below viewport
      ========================================================================== */
   const revealElements = [
     document.querySelector('.map-stage'),
@@ -198,11 +186,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach((el) => {
       const rect = el.getBoundingClientRect();
-      // If below viewport, mark for scroll reveal
       if (rect.top >= viewportHeight) {
         el.classList.add('js-will-reveal');
       } else {
-        // Already visible on load
         el.classList.add('is-revealed');
         if (el.classList.contains('map-stage')) {
           el.classList.add('has-sway');
@@ -234,4 +220,11 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     revealElements.forEach(el => el.classList.add('is-revealed'));
   }
-});
+}
+
+// Support both already-loaded DOM (modules / deferred scripts) and DOMContentLoaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}

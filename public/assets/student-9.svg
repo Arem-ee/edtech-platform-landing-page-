@@ -1,42 +1,136 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 340" fill="none">
-  <!-- Girl sketching in sketchbook on low brick wall -->
-  <g class="character">
-    <!-- Low stone / brick wall -->
-    <rect x="40" y="235" width="240" height="75" rx="4" fill="#E2E8F0"/>
-    <line x1="40" y1="260" x2="280" y2="260" stroke="#CBD5E1" stroke-width="2"/>
-    <line x1="40" y1="285" x2="280" y2="285" stroke="#CBD5E1" stroke-width="2"/>
-    <line x1="100" y1="235" x2="100" y2="260" stroke="#CBD5E1" stroke-width="2"/>
-    <line x1="180" y1="235" x2="180" y2="260" stroke="#CBD5E1" stroke-width="2"/>
-    <line x1="140" y1="260" x2="140" y2="285" stroke="#CBD5E1" stroke-width="2"/>
-    <line x1="220" y1="260" x2="220" y2="285" stroke="#CBD5E1" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 580" width="520" height="580">
     
-    <!-- Girl sitting on the wall -->
-    <!-- Dangling legs -->
-    <path d="M140 230 L135 295" stroke="#46251A" stroke-width="16" stroke-linecap="round"/>
-    <path d="M165 230 L170 295" stroke="#46251A" stroke-width="16" stroke-linecap="round"/>
-    <ellipse cx="132" cy="302" rx="12" ry="7" fill="#EA580C"/>
-    <ellipse cx="173" cy="302" rx="12" ry="7" fill="#EA580C"/>
-    <!-- Denim Dungarees / Terracotta jacket -->
-    <path d="M130 150 L175 150 L170 235 L135 235 Z" fill="#2563EB"/>
-    <path d="M120 155 L135 155 L130 220 L120 220 Z" fill="#C2410C"/>
-    <!-- Arms holding sketchbook and pencil -->
-    <path d="M130 165 Q115 195 135 205" stroke="#46251A" stroke-width="12" stroke-linecap="round"/>
-    <path d="M170 165 Q185 195 160 205" stroke="#46251A" stroke-width="12" stroke-linecap="round"/>
-    <!-- Open sketchbook -->
-    <rect x="130" y="190" width="38" height="26" rx="2" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
-    <line x1="149" y1="190" x2="149" y2="216" stroke="#CBD5E1" stroke-width="1.5"/>
-    <!-- Pencil -->
-    <line x1="162" y1="198" x2="170" y2="188" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
-    <!-- Head / Side-part braids with beads -->
-    <ellipse cx="152" cy="110" rx="22" ry="24" fill="#46251A"/>
-    <!-- Long braids falling to one side -->
-    <path d="M136 100 C136 78 174 78 174 100 C174 108 170 115 165 115 Z" fill="#1A120B"/>
-    <path d="M134 105 Q120 135 125 170" stroke="#1A120B" stroke-width="6" stroke-linecap="round"/>
-    <path d="M138 108 Q125 140 128 175" stroke="#2C1B10" stroke-width="5" stroke-linecap="round"/>
-    <circle cx="125" cy="170" r="3" fill="#F59E0B"/>
-    <circle cx="128" cy="175" r="3" fill="#10B981"/>
-    <!-- Face looking down intently -->
-    <ellipse cx="150" cy="115" rx="3" ry="3.5" fill="#1A120B"/>
-    <path d="M148 123 Q152 126 156 123" stroke="#1A120B" stroke-width="2" fill="none"/>
-  </g>
-</svg>
+    <defs>
+      <!-- Skin tone gradients: Diverse Nigerian deep chocolate & rich brown tones -->
+      <linearGradient id="skin-1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#4E2B18"/>
+        <stop offset="100%" stop-color="#361B0E"/>
+      </linearGradient>
+      <linearGradient id="skin-2" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#5E351E"/>
+        <stop offset="100%" stop-color="#422212"/>
+      </linearGradient>
+      <linearGradient id="skin-3" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#703E22"/>
+        <stop offset="100%" stop-color="#522B15"/>
+      </linearGradient>
+      <linearGradient id="skin-4" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#402012"/>
+        <stop offset="100%" stop-color="#2C1409"/>
+      </linearGradient>
+      <linearGradient id="skin-5" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#64361C"/>
+        <stop offset="100%" stop-color="#492512"/>
+      </linearGradient>
+      <linearGradient id="skin-6" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#552C16"/>
+        <stop offset="100%" stop-color="#3B1C0E"/>
+      </linearGradient>
+      <linearGradient id="skin-7" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#7B4527"/>
+        <stop offset="100%" stop-color="#5C3018"/>
+      </linearGradient>
+
+      <!-- Clothing Gradients (Rafiki vibrant palette) -->
+      <linearGradient id="grad-amber" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#D97706"/>
+      </linearGradient>
+      <linearGradient id="grad-teal" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0D9488"/><stop offset="100%" stop-color="#0F766E"/>
+      </linearGradient>
+      <linearGradient id="grad-coral" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#F43F5E"/><stop offset="100%" stop-color="#E11D48"/>
+      </linearGradient>
+      <linearGradient id="grad-indigo" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#4F46E5"/>
+      </linearGradient>
+      <linearGradient id="grad-emerald" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#059669"/>
+      </linearGradient>
+      <linearGradient id="grad-purple" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#7C3AED"/>
+      </linearGradient>
+      <linearGradient id="grad-blue" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#1D4ED8"/>
+      </linearGradient>
+      <linearGradient id="grad-orange" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#FB923C"/><stop offset="100%" stop-color="#EA580C"/>
+      </linearGradient>
+      <linearGradient id="grad-slate" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#475569"/><stop offset="100%" stop-color="#1E293B"/>
+      </linearGradient>
+
+      <!-- Soft hair shading -->
+      <linearGradient id="hair-dark" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#24140D"/><stop offset="100%" stop-color="#130B07"/>
+      </linearGradient>
+    </defs>
+  
+    <g id="student-9-figure">
+      <!-- Ground shadow under wall and student -->
+      <ellipse cx="260" cy="565" rx="220" ry="16" fill="#1E293B" opacity="0.08"/>
+
+      <!-- LOW STONE WALL / LEDGE (Touching baseline) -->
+      <rect x="120" y="440" width="280" height="120" rx="8" fill="#CBD5E1"/>
+      <rect x="110" y="430" width="300" height="24" rx="6" fill="#94A3B8"/>
+      <!-- Stone texture lines -->
+      <line x1="200" y1="454" x2="200" y2="500" stroke="#64748B" stroke-width="2"/>
+      <line x1="320" y1="454" x2="320" y2="500" stroke="#64748B" stroke-width="2"/>
+      <line x1="160" y1="500" x2="160" y2="550" stroke="#64748B" stroke-width="2"/>
+      <line x1="260" y1="500" x2="260" y2="550" stroke="#64748B" stroke-width="2"/>
+      <line x1="360" y1="500" x2="360" y2="550" stroke="#64748B" stroke-width="2"/>
+      <line x1="120" y1="500" x2="400" y2="500" stroke="#64748B" stroke-width="2"/>
+
+      <!-- Girl seated on wall with legs dangling slightly -->
+      <g id="girl-legs">
+        <!-- High-waisted Indigo trousers -->
+        <path d="M 210 420 L 205 520 L 235 520 L 245 420 Z" fill="url(#grad-indigo)"/>
+        <path d="M 265 420 L 260 510 L 290 510 L 300 420 Z" fill="url(#grad-indigo)"/>
+        <!-- Slip-on flats -->
+        <ellipse cx="220" cy="528" rx="18" ry="9" fill="#1E293B"/>
+        <ellipse cx="275" cy="518" rx="18" ry="9" fill="#1E293B"/>
+      </g>
+
+      <!-- Torso: Rose Coral Blouse -->
+      <path d="M 195 280 C 185 330 185 380 200 430 L 310 430 C 320 380 320 330 305 280 Z" fill="url(#grad-coral)"/>
+      <path d="M 220 320 Q 250 350 280 320" stroke="#E11D48" stroke-width="3" fill="none"/>
+
+      <!-- Large Open Sketchbook across knees -->
+      <rect x="200" y="380" width="120" height="70" rx="4" fill="#059669" transform="rotate(-6 260 415)"/>
+      <rect x="205" y="384" width="110" height="62" rx="3" fill="#FFFFFF" transform="rotate(-6 260 415)"/>
+      <!-- Geometric sketch on page -->
+      <circle cx="240" cy="415" r="14" fill="none" stroke="#2563EB" stroke-width="2"/>
+      <polygon points="260,405 285,405 272,425" fill="none" stroke="#EA580C" stroke-width="2"/>
+
+      <!-- Arms: Left hand stabilizing sketchbook, Right hand drawing with pencil -->
+      <path d="M 195 290 Q 170 360 215 395" stroke="url(#skin-1)" stroke-width="24" stroke-linecap="round" fill="none"/>
+      <circle cx="215" cy="395" r="9" fill="url(#skin-1)"/>
+
+      <path d="M 305 290 Q 330 360 280 405" stroke="url(#skin-1)" stroke-width="24" stroke-linecap="round" fill="none"/>
+      <circle cx="280" cy="405" r="9" fill="url(#skin-1)"/>
+      <!-- Drafting pencil -->
+      <line x1="270" y1="390" x2="285" y2="415" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+
+      <!-- Head & Face (Rich dark mocha) -->
+      <rect x="238" y="240" width="22" height="35" rx="5" fill="url(#skin-1)"/>
+      <ellipse cx="250" cy="200" rx="36" ry="44" fill="url(#skin-1)"/>
+
+      <!-- Facial features -->
+      <path d="M 224 185 Q 235 180 245 185" stroke="#170F0B" stroke-width="3" fill="none"/>
+      <path d="M 255 185 Q 265 180 276 185" stroke="#170F0B" stroke-width="3" fill="none"/>
+      <ellipse cx="234" cy="194" rx="5" ry="3.5" fill="#FFFFFF"/>
+      <circle cx="235" cy="195" r="2.8" fill="#170F0B"/>
+      <ellipse cx="266" cy="194" rx="5" ry="3.5" fill="#FFFFFF"/>
+      <circle cx="265" cy="195" r="2.8" fill="#170F0B"/>
+      <path d="M 250 202 Q 256 212 250 215" stroke="#361B0E" stroke-width="2" fill="none"/>
+      <path d="M 240 228 Q 250 236 260 228" stroke="#241007" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+      <!-- Hair: Braided bob with cowrie shell accents -->
+      <path d="M 210 215 C 210 150 290 150 290 215 C 280 165 220 165 210 215 Z" fill="url(#hair-dark)"/>
+      <path d="M 215 190 Q 200 240 205 270" stroke="url(#hair-dark)" stroke-width="8" stroke-linecap="round" fill="none"/>
+      <path d="M 285 190 Q 300 240 295 270" stroke="url(#hair-dark)" stroke-width="8" stroke-linecap="round" fill="none"/>
+      <!-- Cowrie shells / gold cuffs -->
+      <ellipse cx="205" cy="250" rx="5" ry="4" fill="#FEF3C7"/>
+      <ellipse cx="295" cy="250" rx="5" ry="4" fill="#FEF3C7"/>
+    </g>
+  </svg>
