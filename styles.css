@@ -96,7 +96,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================================================
-   1. NAVBAR (Fixed at top, full width, hero background color)
+   1. NAVBAR
    ========================================================================== */
 .navbar {
   position: fixed;
@@ -274,16 +274,17 @@ h1, h2, h3 {
 }
 
 /* ==========================================================================
-   SECTION 1: HERO
+   SECTION 1: HERO (Continuous Ground Plane & 3 Depth Layers)
    ========================================================================== */
 .section-hero {
   background-color: #FAF8F5;
-  padding-top: clamp(6rem, 9.5vw, 8rem); /* top padding accounts for navbar */
+  padding-top: clamp(5.25rem, 8vw, 6.75rem);
   padding-bottom: 0;
   min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: relative;
   overflow: hidden;
 }
 
@@ -292,7 +293,7 @@ h1, h2, h3 {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 clamp(1rem, 3vw, 2rem);
-  z-index: 10;
+  z-index: 15;
 }
 
 .hero-headline {
@@ -302,6 +303,7 @@ h1, h2, h3 {
   color: #0F172A;
   display: inline-block;
   line-height: 1.15;
+  margin-bottom: 0.25rem;
 }
 
 /* Word-by-word reveal */
@@ -318,15 +320,35 @@ h1, h2, h3 {
   transform: translateY(0);
 }
 
-/* 12 Students: Scaled 1.6x, Spanning full width, small gap to headline */
+/* Field wrapper with continuous ground plane */
+.hero-field-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 0.25rem; /* No empty gap */
+  overflow: hidden;
+}
+
+/* Continuous Ground Plane across full hero width */
+.hero-ground-plane {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to bottom, rgba(243, 237, 226, 0.45) 0%, rgba(243, 237, 226, 0.95) 70%, #FAF8F5 100%);
+  border-top-left-radius: 50% 18px;
+  border-top-right-radius: 50% 18px;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .hero-students-field {
   position: relative;
   width: 100%;
   max-width: 1440px;
-  height: clamp(480px, 48vw, 650px);
-  margin: 0.75rem auto 0;
-  pointer-events: auto;
-  overflow: visible;
+  height: clamp(520px, 50vw, 680px);
+  margin: 0 auto;
+  z-index: 5;
 }
 
 .hero-student-item {
@@ -336,6 +358,9 @@ h1, h2, h3 {
   transition: opacity 700ms var(--ease-standard), transform 700ms var(--ease-standard);
   will-change: transform, opacity;
   user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-student-item.is-entered {
@@ -348,6 +373,31 @@ h1, h2, h3 {
   height: auto;
   display: block;
   pointer-events: none;
+}
+
+/* Soft flat oval ground shadow under every character */
+.student-shadow {
+  width: 75%;
+  height: 16px;
+  background: radial-gradient(ellipse at center, rgba(30, 20, 15, 0.18) 0%, rgba(30, 20, 15, 0) 70%);
+  border-radius: 50%;
+  margin-top: -8px;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* 3 Depth Layers */
+.depth-back {
+  z-index: 2;
+  filter: brightness(1.02) contrast(0.96);
+}
+
+.depth-mid {
+  z-index: 5;
+}
+
+.depth-front {
+  z-index: 8;
 }
 
 /* Idle float */
@@ -364,43 +414,46 @@ h1, h2, h3 {
   }
 }
 
-/* 1.6x larger scale across full width of hero */
-.student-pos-1  { left: 0%;   bottom: 4%;  width: clamp(190px, 20vw, 290px); z-index: 5; }
-.student-pos-2  { left: 9%;   bottom: 1%;  width: clamp(220px, 23vw, 330px); z-index: 7; }
-.student-pos-3  { left: 19%;  bottom: 14%; width: clamp(180px, 19vw, 270px); z-index: 4; }
-.student-pos-4  { left: 28%;  bottom: 20%; width: clamp(200px, 21vw, 300px); z-index: 3; }
-.student-pos-5  { left: 37%;  bottom: 4%;  width: clamp(170px, 18vw, 255px); z-index: 6; }
-.student-pos-6  { left: 45%;  bottom: 0%;  width: clamp(210px, 22vw, 320px); z-index: 8; }
-.student-pos-7  { left: 54%;  bottom: 12%; width: clamp(220px, 23vw, 330px); z-index: 4; }
-.student-pos-8  { left: 63%;  bottom: 2%;  width: clamp(205px, 21vw, 310px); z-index: 7; }
-.student-pos-9  { left: 72%;  bottom: 16%; width: clamp(190px, 20vw, 280px); z-index: 5; }
-.student-pos-10 { left: 79%;  bottom: 22%; width: clamp(175px, 18vw, 260px); z-index: 3; }
-.student-pos-11 { left: 84%;  bottom: 4%;  width: clamp(210px, 22vw, 315px); z-index: 6; }
-.student-pos-12 { left: 88%;  bottom: 14%; width: clamp(195px, 20vw, 290px); z-index: 4; }
+/* Desktop layout: strictly contained between 2% and 82% to avoid any cutoff at 1440px */
+/* Back layer (smaller, high up) */
+.student-pos-4  { left: 16%;  bottom: 30%; width: clamp(170px, 17vw, 240px); }
+.student-pos-7  { left: 34%;  bottom: 26%; width: clamp(190px, 19vw, 260px); }
+.student-pos-10 { left: 56%;  bottom: 32%; width: clamp(175px, 17vw, 240px); }
+.student-pos-12 { left: 74%;  bottom: 24%; width: clamp(180px, 18vw, 250px); }
 
-@media (max-width: 900px) {
-  .hero-students-field {
-    height: 520px;
-    overflow-x: hidden;
-  }
-  .student-pos-1  { left: -2%; bottom: 3%;  width: 190px; }
-  .student-pos-2  { left: 12%; bottom: 0%;  width: 210px; }
-  .student-pos-3  { left: 30%; bottom: 15%; width: 180px; }
-  .student-pos-4  { left: 46%; bottom: 24%; width: 185px; }
-  .student-pos-5  { left: 60%; bottom: 5%;  width: 170px; }
-  .student-pos-6  { left: 74%; bottom: 0%;  width: 200px; }
-  .student-pos-7  { left: 6%;  bottom: 30%; width: 185px; }
-  .student-pos-8  { left: 22%; bottom: 34%; width: 190px; }
-  .student-pos-9  { left: 40%; bottom: 38%; width: 175px; }
-  .student-pos-10 { left: 56%; bottom: 36%; width: 170px; }
-  .student-pos-11 { left: 70%; bottom: 30%; width: 185px; }
-  .student-pos-12 { left: 84%; bottom: 34%; width: 180px; }
-}
+/* Mid layer (medium scale) */
+.student-pos-3  { left: 10%;  bottom: 16%; width: clamp(200px, 20vw, 280px); }
+.student-pos-5  { left: 28%;  bottom: 12%; width: clamp(185px, 18vw, 260px); }
+.student-pos-9  { left: 48%;  bottom: 14%; width: clamp(205px, 20vw, 285px); }
+.student-pos-11 { left: 68%;  bottom: 10%; width: clamp(210px, 21vw, 295px); }
 
-@media (max-width: 600px) {
+/* Front layer (largest scale, forefront) */
+.student-pos-1  { left: 2%;   bottom: 2%;  width: clamp(230px, 23vw, 320px); }
+.student-pos-2  { left: 20%;  bottom: 0%;  width: clamp(250px, 25vw, 340px); }
+.student-pos-6  { left: 40%;  bottom: 1%;  width: clamp(240px, 24vw, 330px); }
+.student-pos-8  { left: 62%;  bottom: 2%;  width: clamp(235px, 23vw, 325px); }
+
+/* Responsive layout: 390px mobile viewport without clipping */
+@media (max-width: 768px) {
   .hero-students-field {
-    height: 460px;
+    height: 480px;
+    max-width: 100%;
+    overflow: hidden;
   }
+  .student-pos-4  { left: 2%;  bottom: 34%; width: 145px; }
+  .student-pos-7  { left: 26%; bottom: 32%; width: 155px; }
+  .student-pos-10 { left: 50%; bottom: 36%; width: 145px; }
+  .student-pos-12 { left: 68%; bottom: 30%; width: 145px; }
+
+  .student-pos-3  { left: 0%;  bottom: 18%; width: 165px; }
+  .student-pos-5  { left: 24%; bottom: 16%; width: 150px; }
+  .student-pos-9  { left: 46%; bottom: 18%; width: 160px; }
+  .student-pos-11 { left: 64%; bottom: 15%; width: 165px; }
+
+  .student-pos-1  { left: -1%; bottom: 2%;  width: 185px; }
+  .student-pos-2  { left: 22%; bottom: 0%;  width: 195px; }
+  .student-pos-6  { left: 44%; bottom: 2%;  width: 185px; }
+  .student-pos-8  { left: 60%; bottom: 3%;  width: 185px; }
 }
 
 /* ==========================================================================
@@ -418,7 +471,6 @@ h1, h2, h3 {
   gap: clamp(2rem, 5vw, 4rem);
 }
 
-/* Map Stage & 3D Low-Angle Effect */
 .map-stage {
   width: 100%;
   position: relative;
@@ -448,7 +500,7 @@ h1, h2, h3 {
 
 .map-floating-element {
   width: 100%;
-  transform: rotateX(24deg); /* tilts top edge away, brings bottom edge closer */
+  transform: rotateX(24deg); /* 3D low-angle tilt */
   transform-origin: center bottom;
   position: relative;
   filter: drop-shadow(0 20px 24px rgba(15, 23, 42, 0.12));
@@ -471,7 +523,7 @@ h1, h2, h3 {
   stroke-width: 2.5;
 }
 
-/* Faint flat offset shadow under the map to show it floats */
+/* Flat offset shadow under map */
 .map-ground-shadow {
   position: absolute;
   left: 8%;
@@ -484,11 +536,11 @@ h1, h2, h3 {
   z-index: 1;
 }
 
-/* Students supporting map from below (overlap bottom edge of map) */
+/* Students supporting map: hands flat against underside, NO gap */
 .map-students-support {
   position: relative;
   width: 100%;
-  margin-top: -12%; /* hands reach up overlapping bottom edge of map */
+  margin-top: -14%; /* hands touch underside with no gap */
   z-index: 10;
   pointer-events: none;
 }
@@ -520,13 +572,10 @@ h1, h2, h3 {
     grid-template-columns: 1fr;
     gap: 3.5rem;
   }
-  .map-students-support {
-    margin-top: -10%;
-  }
 }
 
 /* ==========================================================================
-   SECTION 3: APP SCREENSHOTS (Auto-scrolling)
+   SECTION 3: APP SCREENSHOTS
    ========================================================================== */
 .section-screenshots {
   background-color: #F3F7F5;
@@ -719,6 +768,7 @@ h1, h2, h3 {
 
 /* ==========================================================================
    SECTION 6: COMPARISON TABLE
+   (No inner vertical scroll on desktop; fixed column widths; all 7 rows visible)
    ========================================================================== */
 .section-comparison {
   background-color: #F8FAFC;
@@ -727,25 +777,39 @@ h1, h2, h3 {
 
 .table-responsive-container {
   width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   margin-top: clamp(2rem, 4vw, 3.25rem);
   border-radius: 20px;
   border: 1px solid var(--color-border-subtle);
   background-color: #FFFFFF;
+  overflow-x: hidden; /* no inner scroll on desktop */
+  overflow-y: visible;
+  max-height: none;
+}
+
+@media (max-width: 768px) {
+  .table-responsive-container {
+    overflow-x: auto; /* horizontal scroll only on mobile */
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 .comparison-table {
   width: 100%;
-  min-width: 620px;
+  min-width: 600px;
+  table-layout: fixed; /* fixed column widths so all rows align perfectly */
   border-collapse: collapse;
   text-align: left;
 }
+
+.col-feature { width: 44%; }
+.col-platform { width: 28%; }
+.col-others { width: 28%; }
 
 .comparison-table th,
 .comparison-table td {
   padding: 1.15rem 1.75rem;
   border-bottom: 1px solid #E2E8F0;
+  vertical-align: middle;
 }
 
 .comparison-table th {
@@ -755,21 +819,17 @@ h1, h2, h3 {
 }
 
 .th-feature {
-  width: 44%;
   color: #334155;
   background-color: #F8FAFC;
 }
 
-/* Highlighted Platform Column */
 .th-platform {
-  width: 28%;
   background-color: var(--brand-blue);
   color: #FFFFFF;
   text-align: center;
 }
 
 .th-others {
-  width: 28%;
   color: #64748B;
   background-color: #F8FAFC;
   text-align: center;
@@ -809,7 +869,8 @@ h1, h2, h3 {
   transition: stroke-dashoffset 650ms var(--ease-standard);
 }
 
-.table-row.is-revealed .table-check-icon path {
+.table-row.is-revealed .table-check-icon path,
+body:not(.js-observer-ready) .table-check-icon path {
   stroke-dashoffset: 0;
 }
 
@@ -820,12 +881,13 @@ h1, h2, h3 {
   transition: stroke-dashoffset 650ms var(--ease-standard);
 }
 
-.table-row.is-revealed .table-cross-icon path {
+.table-row.is-revealed .table-cross-icon path,
+body:not(.js-observer-ready) .table-cross-icon path {
   stroke-dashoffset: 0;
 }
 
 /* ==========================================================================
-   SECTION 7: CTA (Solid --brand-blue fill, dark blue hover sweep)
+   SECTION 7: CTA
    ========================================================================== */
 .section-cta {
   background-color: #FFFBEB;
@@ -859,7 +921,7 @@ h1, h2, h3 {
   border-radius: 999px;
   border: none;
   color: #FFFFFF;
-  background-color: var(--brand-blue); /* Solid --brand-blue fill at rest */
+  background-color: var(--brand-blue);
   cursor: pointer;
   overflow: hidden;
   z-index: 1;
@@ -873,7 +935,7 @@ h1, h2, h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--brand-blue-dark); /* sweeps to darker blue */
+  background-color: var(--brand-blue-dark);
   z-index: -1;
   transform: translateX(-100%);
   transition: transform 300ms var(--ease-standard);
@@ -942,29 +1004,21 @@ h1, h2, h3 {
 }
 
 /* ==========================================================================
-   REVEAL BEHAVIORS (Elements are completely visible by default)
-   Hidden start states are applied ONLY when JS is running via .js-observer-ready
+   REVEAL BEHAVIORS: DEFAULT VISIBLE EVERYWHERE
+   Hidden start states are applied ONLY when JS observer is actively running
+   AND element is currently below viewport
    ========================================================================== */
-.js-observer-ready .js-reveal-item:not(.is-revealed),
-.js-observer-ready .story-block:not(.is-revealed),
-.js-observer-ready .exam-card:not(.is-revealed),
-.js-observer-ready .blog-card:not(.is-revealed),
-.js-observer-ready .table-row:not(.is-revealed) {
+.js-observer-ready .js-will-reveal {
   opacity: 0;
   transform: translateY(28px);
 }
 
-.js-observer-ready .map-stage:not(.is-revealed) {
+.js-observer-ready .map-stage.js-will-reveal {
   opacity: 0;
   transform: translateY(80px) rotate(-2deg);
 }
 
-.js-reveal-item.is-revealed,
-.story-block.is-revealed,
-.exam-card.is-revealed,
-.blog-card.is-revealed,
-.table-row.is-revealed,
-.map-stage.is-revealed {
+.is-revealed {
   opacity: 1 !important;
   transform: none !important;
 }

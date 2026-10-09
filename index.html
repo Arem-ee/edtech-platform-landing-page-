@@ -64,60 +64,70 @@
         <h1 class="hero-headline" id="heroHeadline">[HERO HEADLINE]</h1>
       </div>
 
-      <!-- 12 Nigerian student illustrations spread across lively field (scaled 1.6x, spanning full width) -->
-      <div class="hero-students-field" id="heroStudentsField">
-        <!-- 1. girl sitting cross-legged reading a thick book -->
-        <div class="hero-student-item student-pos-1" data-depth="0.05" style="--idle-dur: 6.2s; --idle-delay: 0.1s;">
-          <img src="/assets/student-1.svg" alt="Nigerian girl sitting cross-legged reading a thick book" class="student-img" />
-        </div>
-        <!-- 2. boy lying on his stomach reading, feet in the air -->
-        <div class="hero-student-item student-pos-2" data-depth="0.11" style="--idle-dur: 7.4s; --idle-delay: 0.4s;">
-          <img src="/assets/student-2.svg" alt="Nigerian boy lying on his stomach reading, feet in the air" class="student-img" />
-        </div>
-        <!-- 3. girl sitting on a stack of books, writing in a notebook -->
-        <div class="hero-student-item student-pos-3" data-depth="0.08" style="--idle-dur: 5.8s; --idle-delay: 0.8s;">
-          <img src="/assets/student-3.svg" alt="Nigerian girl sitting on a stack of books, writing in a notebook" class="student-img" />
-        </div>
-        <!-- 4. boy sitting against a tree trunk reading a tablet -->
-        <div class="hero-student-item student-pos-4" data-depth="0.14" style="--idle-dur: 8.6s; --idle-delay: 0.2s;">
-          <img src="/assets/student-4.svg" alt="Nigerian boy sitting against a tree trunk reading a tablet" class="student-img" />
-        </div>
-        <!-- 5. girl standing, holding an open book close to her face -->
-        <div class="hero-student-item student-pos-5" data-depth="0.06" style="--idle-dur: 6.9s; --idle-delay: 1.1s;">
-          <img src="/assets/student-5.svg" alt="Nigerian girl standing, holding an open book close to her face" class="student-img" />
-        </div>
-        <!-- 6. boy sitting on the ground painting on a small canvas easel -->
-        <div class="hero-student-item student-pos-6" data-depth="0.12" style="--idle-dur: 7.8s; --idle-delay: 0.5s;">
-          <img src="/assets/student-6.svg" alt="Nigerian boy sitting on the ground painting on a small canvas easel" class="student-img" />
-        </div>
-        <!-- 7. girl lying on her back, book held above her -->
-        <div class="hero-student-item student-pos-7" data-depth="0.09" style="--idle-dur: 5.5s; --idle-delay: 1.4s;">
-          <img src="/assets/student-7.svg" alt="Nigerian girl lying on her back, book held above her" class="student-img" />
-        </div>
-        <!-- 8. boy sitting on a bean bag with a laptop -->
-        <div class="hero-student-item student-pos-8" data-depth="0.13" style="--idle-dur: 8.1s; --idle-delay: 0.7s;">
-          <img src="/assets/student-8.svg" alt="Nigerian boy sitting on a bean bag with a laptop" class="student-img" />
-        </div>
-        <!-- 9. girl sketching in a sketchbook while sitting on a low wall -->
-        <div class="hero-student-item student-pos-9" data-depth="0.07" style="--idle-dur: 6.5s; --idle-delay: 1.0s;">
-          <img src="/assets/student-9.svg" alt="Nigerian girl sketching in a sketchbook while sitting on a low wall" class="student-img" />
-        </div>
-        <!-- 10. boy standing, reading a book while walking -->
-        <div class="hero-student-item student-pos-10" data-depth="0.10" style="--idle-dur: 7.1s; --idle-delay: 0.3s;">
-          <img src="/assets/student-10.svg" alt="Nigerian boy standing, reading a book while walking" class="student-img" />
-        </div>
-        <!-- 11. girl sitting on the floor, surrounded by open books, highlighting a page -->
-        <div class="hero-student-item student-pos-11" data-depth="0.05" style="--idle-dur: 8.9s; --idle-delay: 1.3s;">
-          <img src="/assets/student-11.svg" alt="Nigerian girl sitting on the floor, surrounded by open books, highlighting a page" class="student-img" />
-        </div>
-        <!-- 12. boy kneeling, solving a math problem on a small whiteboard -->
-        <div class="hero-student-item student-pos-12" data-depth="0.12" style="--idle-dur: 6.0s; --idle-delay: 0.9s;">
-          <img src="/assets/student-12.svg" alt="Nigerian boy kneeling, solving a math problem on a small whiteboard" class="student-img" />
+      <!-- Hero Open Field with Continuous Ground Plane & 3 Depth Layers -->
+      <div class="hero-field-wrapper">
+        <!-- Continuous Ground Plane blending into section background -->
+        <div class="hero-ground-plane" aria-hidden="true"></div>
+
+        <div class="hero-students-field" id="heroStudentsField">
+          <!-- BACK LAYER (Layer 1: Smaller, set back, soft ground shadow) -->
+          <div class="hero-student-item student-pos-4 depth-back" data-depth="0.05" style="--idle-dur: 8.4s; --idle-delay: 0.2s;">
+            <img src="/assets/student-4.png" alt="Nigerian boy sitting against tree trunk reading tablet" class="student-img" />
+            <div class="student-shadow"></div>
+          </div>
+          <div class="hero-student-item student-pos-7 depth-back" data-depth="0.06" style="--idle-dur: 7.2s; --idle-delay: 0.6s;">
+            <img src="/assets/student-7.png" alt="Nigerian girl lying on back reading book held in air" class="student-img" />
+            <div class="student-shadow"></div>
+          </div>
+          <div class="hero-student-item student-pos-10 depth-back" data-depth="0.05" style="--idle-dur: 8.8s; --idle-delay: 0.4s;">
+            <img src="/assets/student-10.png" alt="Nigerian boy standing reading book while walking" class="student-img" />
+            <div class="student-shadow"></div>
+          </div>
+          <div class="hero-student-item student-pos-12 depth-back" data-depth="0.06" style="--idle-dur: 7.6s; --idle-delay: 0.9s;">
+            <img src="/assets/student-12.png" alt="Nigerian boy kneeling solving math on whiteboard" class="student-img" />
+            <div class="student-shadow"></div>
+          </div>
+
+          <!-- MID LAYER (Layer 2: Medium scale, mid field) -->
+          <div class="hero-student-item student-pos-3 depth-mid" data-depth="0.08" style="--idle-dur: 6.8s; --idle-delay: 0.3s;">
+            <img src="/assets/student-3.png" alt="Nigerian girl sitting on stack of books writing in notebook" class="student-img" />
+            <div class="student-shadow"></div>
+          </div>
+          <div class="hero-student-item student-pos-5 depth-mid" data-depth="0.09" style="--idle-dur: 7.0s; --idle-delay: 0.7s;">
+            <img src="/assets/student-5.png" alt="Nigerian girl standing holding open book close to face" class="student-img" />
+            <div class="student-shadow"></div>
+          </div>
+          <div class="hero-student-item student-pos-9 depth-mid" data-depth="0.08" style="--idle-dur: 6.4s; --idle-delay: 1.1s;">
+            <img src="/assets/student-9.png" alt="Nigerian girl sketching in sketchbook on low wall" class="student-img" />
+            <div class="student-shadow"></div>
+          </div>
+          <div class="hero-student-item student-pos-11 depth-mid" data-depth="0.09" style="--idle-dur: 8.1s; --idle-delay: 0.5s;">
+            <img src="/assets/student-11.png" alt="Nigerian girl sitting on floor surrounded by books highlighting" class="student-img" />
+            <div class="student-shadow"></div>
+          </div>
+
+          <!-- FRONT LAYER (Layer 3: Forefront, largest, rich detail) -->
+          <div class="hero-student-item student-pos-1 depth-front" data-depth="0.12" style="--idle-dur: 6.0s; --idle-delay: 0.1s;">
+            <img src="/assets/student-1.png" alt="Nigerian girl sitting cross-legged reading thick book" class="student-img" />
+            <div class="student-shadow"></div>
+          </div>
+          <div class="hero-student-item student-pos-2 depth-front" data-depth="0.13" style="--idle-dur: 7.5s; --idle-delay: 0.4s;">
+            <img src="/assets/student-2.png" alt="Nigerian boy lying on stomach reading feet in air" class="student-img" />
+            <div class="student-shadow"></div>
+          </div>
+          <div class="hero-student-item student-pos-6 depth-front" data-depth="0.14" style="--idle-dur: 6.6s; --idle-delay: 0.8s;">
+            <img src="/assets/student-6.png" alt="Nigerian boy sitting on ground painting on easel" class="student-img" />
+            <div class="student-shadow"></div>
+          </div>
+          <div class="hero-student-item student-pos-8 depth-front" data-depth="0.13" style="--idle-dur: 8.0s; --idle-delay: 1.0s;">
+            <img src="/assets/student-8.png" alt="Nigerian boy sitting on bean bag with laptop" class="student-img" />
+            <div class="student-shadow"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Wave Divider 1 -> 2 -->
+    <!-- Wave Divider 1 -> 2 (Hero ground plane flows into Section 2) -->
     <div class="wave-divider" aria-hidden="true">
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
         <path d="M0,32 C360,78 720,8 1080,48 C1260,68 1380,40 1440,32 L1440,80 L0,80 Z" fill="#FDFBF7"/>
@@ -248,9 +258,9 @@
               <!-- Faint flat offset shadow showing map floats -->
               <div class="map-ground-shadow" aria-hidden="true"></div>
             </div>
-            <!-- Students illustration with real alpha PNG, hands supporting map underside -->
+            <!-- Students illustration with real alpha PNG: 7 varied students seen from below, faces looking up, hands flat touching map underside with no gap -->
             <div class="map-students-support">
-              <img src="/assets/students-supporting-map.png" alt="Group of Nigerian students seen from low camera angle with raised arms holding the map of Nigeria overhead" class="students-support-img" />
+              <img src="/assets/map-students.png" alt="Group of Nigerian students seen from low camera angle looking up, hands flat touching underside of map of Nigeria" class="students-support-img" />
             </div>
           </div>
         </div>
@@ -299,10 +309,10 @@
           <div class="screenshot-panel panel-even" aria-hidden="true"><img src="/assets/screenshot-2.png" alt="screenshot-2.png" class="screenshot-img" /></div>
           <div class="screenshot-panel panel-odd" aria-hidden="true"><img src="/assets/screenshot-3.png" alt="screenshot-3.png" class="screenshot-img" /></div>
           <div class="screenshot-panel panel-even" aria-hidden="true"><img src="/assets/screenshot-4.png" alt="screenshot-4.png" class="screenshot-img" /></div>
-          <div class="screenshot-panel panel-odd" aria-hidden="true"><img src="/assets/screenshot-5.png" alt="screenshot-5.png" class="screenshot-img" /></div>
-          <div class="screenshot-panel panel-even" aria-hidden="true"><img src="/assets/screenshot-6.png" alt="screenshot-6.png" class="screenshot-img" /></div>
-          <div class="screenshot-panel panel-odd" aria-hidden="true"><img src="/assets/screenshot-7.png" alt="screenshot-7.png" class="screenshot-img" /></div>
-          <div class="screenshot-panel panel-even" aria-hidden="true"><img src="/assets/screenshot-8.png" alt="screenshot-8.png" class="screenshot-img" /></div>
+          <div class="screenshot-panel panel-odd" aria-hidden="true"><img src="/assets/screenshot-1.png" alt="screenshot-5.png" class="screenshot-img" /></div>
+          <div class="screenshot-panel panel-even" aria-hidden="true"><img src="/assets/screenshot-2.png" alt="screenshot-6.png" class="screenshot-img" /></div>
+          <div class="screenshot-panel panel-odd" aria-hidden="true"><img src="/assets/screenshot-3.png" alt="screenshot-7.png" class="screenshot-img" /></div>
+          <div class="screenshot-panel panel-even" aria-hidden="true"><img src="/assets/screenshot-4.png" alt="screenshot-8.png" class="screenshot-img" /></div>
         </div>
       </div>
     </section>
@@ -323,37 +333,37 @@
         </div>
 
         <div class="exams-grid" id="examsGrid">
-          <!-- Cards from [EXAM LIST] -->
+          <!-- Cards generated strictly with [EXAM LIST] placeholder as specified -->
           <div class="exam-card exam-card-1 js-reveal-card">
-            <h3 class="exam-name">WAEC / WASSCE</h3>
+            <h3 class="exam-name">[EXAM LIST]</h3>
             <p class="exam-desc">[EXAM DESCRIPTION]</p>
           </div>
           <div class="exam-card exam-card-2 js-reveal-card">
-            <h3 class="exam-name">JAMB / UTME</h3>
+            <h3 class="exam-name">[EXAM LIST]</h3>
             <p class="exam-desc">[EXAM DESCRIPTION]</p>
           </div>
           <div class="exam-card exam-card-3 js-reveal-card">
-            <h3 class="exam-name">NECO / SSCE</h3>
+            <h3 class="exam-name">[EXAM LIST]</h3>
             <p class="exam-desc">[EXAM DESCRIPTION]</p>
           </div>
           <div class="exam-card exam-card-4 js-reveal-card">
-            <h3 class="exam-name">BECE (Junior WAEC)</h3>
+            <h3 class="exam-name">[EXAM LIST]</h3>
             <p class="exam-desc">[EXAM DESCRIPTION]</p>
           </div>
           <div class="exam-card exam-card-5 js-reveal-card">
-            <h3 class="exam-name">Post-UTME Screening</h3>
+            <h3 class="exam-name">[EXAM LIST]</h3>
             <p class="exam-desc">[EXAM DESCRIPTION]</p>
           </div>
           <div class="exam-card exam-card-6 js-reveal-card">
-            <h3 class="exam-name">NABTEB</h3>
+            <h3 class="exam-name">[EXAM LIST]</h3>
             <p class="exam-desc">[EXAM DESCRIPTION]</p>
           </div>
           <div class="exam-card exam-card-7 js-reveal-card">
-            <h3 class="exam-name">IGCSE & Cambridge</h3>
+            <h3 class="exam-name">[EXAM LIST]</h3>
             <p class="exam-desc">[EXAM DESCRIPTION]</p>
           </div>
           <div class="exam-card exam-card-8 js-reveal-card">
-            <h3 class="exam-name">SAT & Advanced Placement</h3>
+            <h3 class="exam-name">[EXAM LIST]</h3>
             <p class="exam-desc">[EXAM DESCRIPTION]</p>
           </div>
         </div>
@@ -413,13 +423,18 @@
       </svg>
     </div>
 
-    <!-- SECTION 6: COMPARISON TABLE -->
+    <!-- SECTION 6: COMPARISON TABLE (No vertical scroll on desktop, fixed column widths, all 7 rows visible) -->
     <section class="section section-comparison" id="comparison">
       <div class="section-container">
         <h2 class="section-heading text-center js-reveal-item">[COMPARISON HEADING]</h2>
         
         <div class="table-responsive-container js-reveal-table">
           <table class="comparison-table">
+            <colgroup>
+              <col class="col-feature" />
+              <col class="col-platform" />
+              <col class="col-others" />
+            </colgroup>
             <thead>
               <tr>
                 <th scope="col" class="th-feature">Feature</th>

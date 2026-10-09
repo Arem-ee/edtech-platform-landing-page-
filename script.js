@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navHamburger = document.getElementById('navHamburger');
   const navMobilePanel = document.getElementById('navMobilePanel');
 
-  // After scrolling 40px, navbar gains bottom border
   function handleNavbarScroll() {
     if (!navbar) return;
     if (window.scrollY > 40) {
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleNavbarScroll, { passive: true });
   handleNavbarScroll();
 
-  // Mobile Hamburger Toggle
   function closeMobileNav() {
     if (!navHamburger || !navMobilePanel) return;
     navHamburger.setAttribute('aria-expanded', 'false');
@@ -50,14 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
     navHamburger.addEventListener('click', toggleMobileNav);
   }
 
-  // Close mobile nav on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeMobileNav();
     }
   });
 
-  // Close mobile nav when clicking any link
   if (navMobilePanel) {
     const mobileLinks = navMobilePanel.querySelectorAll('a');
     mobileLinks.forEach((link) => {
@@ -89,15 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
       wordSpans.forEach(span => span.classList.add('is-revealed'));
       studentItems.forEach(item => item.classList.add('is-entered'));
     } else {
-      // Word-by-word reveal: 70ms stagger, 700ms each
       wordSpans.forEach((span, index) => {
         setTimeout(() => {
           span.classList.add('is-revealed');
         }, index * 70);
       });
 
-      // Characters enter one by one: 120ms stagger
-      const headlineLeadDuration = Math.max(250, wordSpans.length * 70 + 150);
+      const headlineLeadDuration = Math.max(200, wordSpans.length * 70 + 100);
       setTimeout(() => {
         studentItems.forEach((item, index) => {
           setTimeout(() => {
@@ -105,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
               item.classList.add('has-idle');
             }, 750);
-          }, index * 120);
+          }, index * 100);
         });
       }, headlineLeadDuration);
     }
@@ -136,8 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       studentItems.forEach((item) => {
         const depth = parseFloat(item.getAttribute('data-depth') || '0.08');
-        const shiftX = (mouseX * depth * 90).toFixed(2);
-        const shiftY = (mouseY * depth * 75).toFixed(2);
+        const shiftX = (mouseX * depth * 80).toFixed(2);
+        const shiftY = (mouseY * depth * 65).toFixed(2);
         item.style.setProperty('--px-x', `${shiftX}px`);
         item.style.setProperty('--px-y', `${shiftY}px`);
       });
@@ -163,11 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSpeed = baseSpeed;
 
     trackWrapper.addEventListener('mouseenter', () => {
-      targetSpeed = 0; // Smooth ease-down
+      targetSpeed = 0;
     });
 
     trackWrapper.addEventListener('mouseleave', () => {
-      targetSpeed = baseSpeed; // Smooth ease-up
+      targetSpeed = baseSpeed;
     });
 
     function animateMarquee() {
@@ -187,40 +181,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     4. REVEAL ANIMATIONS (Never Leave Content Hidden)
+     4. REVEAL BEHAVIORS: DEFAULT VISIBLE EVERYWHERE
+     Hidden state applies only once observer is running and element is below viewport
      ========================================================================== */
-  const observeTargets = [
-    document.querySelector('.js-reveal-map'),
-    document.querySelector('.js-reveal-group'),
-    document.getElementById('examsGrid'),
-    document.getElementById('blogGrid'),
-    document.querySelector('.js-reveal-table'),
+  const revealElements = [
+    document.querySelector('.map-stage'),
+    ...document.querySelectorAll('.story-block'),
+    ...document.querySelectorAll('.exam-card'),
+    ...document.querySelectorAll('.blog-card'),
+    ...document.querySelectorAll('.table-row'),
     ...document.querySelectorAll('.js-reveal-item')
   ].filter(Boolean);
 
   if ('IntersectionObserver' in window && !prefersReducedMotion) {
-    // 1. Immediately reveal elements already in the viewport
     const viewportHeight = window.innerHeight;
-    observeTargets.forEach((el) => {
+
+    revealElements.forEach((el) => {
       const rect = el.getBoundingClientRect();
-      if (rect.top < viewportHeight * 0.95 && rect.bottom > 0) {
+      // If below viewport, mark for scroll reveal
+      if (rect.top >= viewportHeight) {
+        el.classList.add('js-will-reveal');
+      } else {
+        // Already visible on load
         el.classList.add('is-revealed');
-        // Handle child elements
-        if (el.classList.contains('js-reveal-group')) {
-          el.querySelectorAll('.story-block').forEach(b => b.classList.add('is-revealed'));
-        } else if (el.id === 'examsGrid') {
-          el.querySelectorAll('.exam-card').forEach(c => c.classList.add('is-revealed'));
-        } else if (el.id === 'blogGrid') {
-          el.querySelectorAll('.blog-card').forEach(b => b.classList.add('is-revealed'));
-        } else if (el.classList.contains('js-reveal-table')) {
-          el.querySelectorAll('.table-row').forEach(r => r.classList.add('is-revealed'));
-        } else if (el.classList.contains('js-reveal-map')) {
+        if (el.classList.contains('map-stage')) {
           el.classList.add('has-sway');
         }
       }
     });
 
-    // 2. Now activate observer styles for off-screen elements
     document.body.classList.add('js-observer-ready');
 
     const observer = new IntersectionObserver((entries, obs) => {
@@ -228,42 +217,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!entry.isIntersecting) return;
         const target = entry.target;
 
-        if (target.classList.contains('js-reveal-map')) {
-          target.classList.add('is-revealed');
+        target.classList.remove('js-will-reveal');
+        target.classList.add('is-revealed');
+
+        if (target.classList.contains('map-stage')) {
           setTimeout(() => {
             target.classList.add('has-sway');
           }, 1150);
-        } else if (target.classList.contains('js-reveal-group')) {
-          const blocks = target.querySelectorAll('.story-block');
-          blocks.forEach((block, idx) => {
-            setTimeout(() => block.classList.add('is-revealed'), idx * 150);
-          });
-        } else if (target.id === 'examsGrid') {
-          const cards = target.querySelectorAll('.exam-card');
-          cards.forEach((card, idx) => {
-            setTimeout(() => card.classList.add('is-revealed'), idx * 90);
-          });
-        } else if (target.id === 'blogGrid') {
-          const cards = target.querySelectorAll('.blog-card');
-          cards.forEach((card, idx) => {
-            setTimeout(() => card.classList.add('is-revealed'), idx * 120);
-          });
-        } else if (target.classList.contains('js-reveal-table')) {
-          const rows = target.querySelectorAll('.table-row');
-          rows.forEach((row, idx) => {
-            setTimeout(() => row.classList.add('is-revealed'), idx * 80);
-          });
-        } else if (target.classList.contains('js-reveal-item')) {
-          target.classList.add('is-revealed');
         }
 
         obs.unobserve(target);
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
-    observeTargets.forEach(el => observer.observe(el));
+    document.querySelectorAll('.js-will-reveal').forEach(el => observer.observe(el));
   } else {
-    // Fallback: keep all content visible
-    observeTargets.forEach(el => el.classList.add('is-revealed'));
+    revealElements.forEach(el => el.classList.add('is-revealed'));
   }
 });
