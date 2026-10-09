@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" fill="none">
+  <!-- Girl cross-legged reading thick book -->
+  <g class="character">
+    <!-- Legs cross-legged -->
+    <path d="M70 260 C70 230 110 225 160 225 C210 225 250 230 250 260 C240 280 200 285 160 285 C120 285 80 280 70 260 Z" fill="#0D9488"/>
+    <!-- Feet with stylish flats -->
+    <ellipse cx="85" cy="265" rx="16" ry="10" fill="#3B1E12" transform="rotate(-15 85 265)"/>
+    <ellipse cx="235" cy="265" rx="16" ry="10" fill="#3B1E12" transform="rotate(15 235 265)"/>
+    <ellipse cx="80" cy="268" rx="14" ry="7" fill="#F59E0B"/>
+    <ellipse cx="240" cy="268" rx="14" ry="7" fill="#F59E0B"/>
+    <!-- Torso / Yellow Mustard Blouse -->
+    <path d="M125 155 L115 235 L205 235 L195 155 Z" fill="#F59E0B"/>
+    <path d="M130 155 L160 185 L190 155" fill="#D97706"/>
+    <!-- Arms holding book -->
+    <path d="M120 160 C100 185 110 215 135 220" stroke="#452317" stroke-width="20" stroke-linecap="round"/>
+    <path d="M200 160 C220 185 210 215 185 220" stroke="#452317" stroke-width="20" stroke-linecap="round"/>
+    <!-- Hands -->
+    <circle cx="138" cy="218" r="11" fill="#452317"/>
+    <circle cx="182" cy="218" r="11" fill="#452317"/>
+    <!-- Thick Book -->
+    <path d="M110 210 Q160 222 210 210 L212 240 Q160 250 108 240 Z" fill="#1E3A8A"/>
+    <!-- Book pages -->
+    <path d="M112 212 Q160 223 208 212 L206 236 Q160 245 114 236 Z" fill="#FEF3C7"/>
+    <line x1="160" y1="219" x2="160" y2="243" stroke="#D97706" stroke-width="2"/>
+    <line x1="125" y1="223" x2="150" y2="225" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+    <line x1="125" y1="229" x2="148" y2="231" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+    <line x1="170" y1="225" x2="195" y2="223" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+    <line x1="172" y1="231" x2="195" y2="229" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+    <!-- Neck -->
+    <rect x="150" y="130" width="20" height="30" rx="5" fill="#452317"/>
+    <!-- Head / Face (Chocolate complexion) -->
+    <ellipse cx="160" cy="115" rx="28" ry="34" fill="#452317"/>
+    <!-- Face details (soft profile) -->
+    <path d="M152 118 Q160 124 168 118" stroke="#1F100B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="147" cy="110" rx="3.5" ry="4" fill="#1F100B"/>
+    <ellipse cx="173" cy="110" rx="3.5" ry="4" fill="#1F100B"/>
+    <path d="M142 102 Q148 100 153 103" stroke="#1F100B" stroke-width="2.5" fill="none"/>
+    <path d="M167 103 Q172 100 178 102" stroke="#1F100B" stroke-width="2.5" fill="none"/>
+    <!-- Braided crown / box braids hairstyle -->
+    <path d="M130 105 C125 70 195 70 190 105 C185 75 135 75 130 105 Z" fill="#1A120B"/>
+    <ellipse cx="160" cy="72" rx="26" ry="18" fill="#1A120B"/>
+    <!-- Braids hanging down -->
+    <path d="M132 95 Q120 130 122 170" stroke="#1A120B" stroke-width="8" stroke-linecap="round"/>
+    <path d="M138 92 Q128 135 130 175" stroke="#2C1B10" stroke-width="7" stroke-linecap="round"/>
+    <path d="M188 95 Q200 130 198 170" stroke="#1A120B" stroke-width="8" stroke-linecap="round"/>
+    <path d="M182 92 Q192 135 190 175" stroke="#2C1B10" stroke-width="7" stroke-linecap="round"/>
+    <!-- Golden hair cuffs -->
+    <rect x="121" y="140" width="7" height="4" rx="2" fill="#F59E0B"/>
+    <rect x="192" y="142" width="7" height="4" rx="2" fill="#F59E0B"/>
+  </g>
+</svg>

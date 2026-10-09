@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 360" fill="none">
+  <!-- Girl standing, holding open book close to face -->
+  <g class="character">
+    <!-- Legs / Plaid or Navy Pleated Skirt & legs -->
+    <line x1="115" y1="240" x2="112" y2="330" stroke="#482519" stroke-width="14" stroke-linecap="round"/>
+    <line x1="145" y1="240" x2="148" y2="330" stroke="#482519" stroke-width="14" stroke-linecap="round"/>
+    <!-- Ankle socks & Mary Jane shoes -->
+    <rect x="105" y="315" width="14" height="15" rx="2" fill="#FFFFFF"/>
+    <rect x="141" y="315" width="14" height="15" rx="2" fill="#FFFFFF"/>
+    <ellipse cx="112" cy="336" rx="14" ry="7" fill="#1E293B"/>
+    <ellipse cx="148" cy="336" rx="14" ry="7" fill="#1E293B"/>
+    <!-- Skirt -->
+    <path d="M98 190 L162 190 L175 245 L85 245 Z" fill="#4338CA"/>
+    <line x1="110" y1="190" x2="105" y2="245" stroke="#312E81" stroke-width="2"/>
+    <line x1="130" y1="190" x2="130" y2="245" stroke="#312E81" stroke-width="2"/>
+    <line x1="150" y1="190" x2="155" y2="245" stroke="#312E81" stroke-width="2"/>
+    <!-- Torso / Crisp Coral Blouse -->
+    <path d="M105 110 L155 110 L160 190 L100 190 Z" fill="#FB7185"/>
+    <path d="M120 110 L130 130 L140 110" fill="#E11D48"/>
+    <!-- Arms raised holding book close to face -->
+    <path d="M102 120 Q85 140 110 120" stroke="#482519" stroke-width="12" stroke-linecap="round"/>
+    <path d="M158 120 Q175 140 150 120" stroke="#482519" stroke-width="12" stroke-linecap="round"/>
+    <!-- Open book held high -->
+    <path d="M95 100 Q130 112 165 100 L168 135 Q130 145 92 135 Z" fill="#0D9488"/>
+    <path d="M98 103 Q130 114 162 103 L160 132 Q130 142 95 132 Z" fill="#FEF3C7"/>
+    <line x1="130" y1="112" x2="130" y2="142" stroke="#0D9488" stroke-width="2"/>
+    <!-- Eyes peering over top of book -->
+    <!-- Head / Short tapered natural afro -->
+    <ellipse cx="130" cy="72" rx="22" ry="24" fill="#482519"/>
+    <!-- Hair -->
+    <path d="M108 70 C108 48 152 48 152 70 C152 78 148 85 148 85 C148 85 112 85 112 85 Z" fill="#1C130D"/>
+    <!-- Wide expressive eyes looking over book -->
+    <ellipse cx="120" cy="76" rx="4.5" ry="5" fill="#FFFFFF"/>
+    <ellipse cx="120" cy="76" rx="2.5" ry="3" fill="#1C130D"/>
+    <ellipse cx="140" cy="76" rx="4.5" ry="5" fill="#FFFFFF"/>
+    <ellipse cx="140" cy="76" rx="2.5" ry="3" fill="#1C130D"/>
+    <path d="M115 68 Q120 65 125 67" stroke="#1C130D" stroke-width="2" fill="none"/>
+    <path d="M135 67 Q140 65 145 68" stroke="#1C130D" stroke-width="2" fill="none"/>
+  </g>
+</svg>

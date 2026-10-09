@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 320" fill="none">
+  <!-- Boy sitting painting on small canvas easel -->
+  <g class="character">
+    <!-- Easel Tripod legs -->
+    <line x1="90" y1="130" x2="60" y2="300" stroke="#78350F" stroke-width="6" stroke-linecap="round"/>
+    <line x1="110" y1="130" x2="130" y2="300" stroke="#78350F" stroke-width="6" stroke-linecap="round"/>
+    <line x1="100" y1="110" x2="95" y2="280" stroke="#92400E" stroke-width="5"/>
+    <!-- Small Canvas with colorful painting (geometry/art) -->
+    <rect x="65" y="140" width="70" height="90" rx="3" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+    <circle cx="100" cy="175" r="18" fill="#F59E0B"/>
+    <path d="M75 210 L95 185 L115 210 Z" fill="#2563EB"/>
+    <path d="M100 215 L115 195 L130 215 Z" fill="#10B981"/>
+    
+    <!-- Boy sitting on ground facing easel -->
+    <!-- Legs folded -->
+    <path d="M170 240 C170 270 220 290 270 270 C270 240 240 230 200 230 Z" fill="#1E293B"/>
+    <!-- Torso / Mint Green Artist Smock / T-shirt -->
+    <path d="M185 150 L235 150 L230 240 L180 240 Z" fill="#10B981"/>
+    <!-- Left Hand holding artist palette -->
+    <path d="M190 170 Q165 200 160 215" stroke="#3A1E14" stroke-width="14" stroke-linecap="round"/>
+    <!-- Wooden Palette with colorful paint spots -->
+    <ellipse cx="155" cy="220" rx="18" ry="12" fill="#D97706"/>
+    <circle cx="148" cy="217" r="3" fill="#EF4444"/>
+    <circle cx="156" cy="215" r="3" fill="#3B82F6"/>
+    <circle cx="163" cy="218" r="3" fill="#FBBF24"/>
+    <circle cx="154" cy="223" r="3" fill="#FFFFFF"/>
+    <!-- Right Hand with brush painting on canvas -->
+    <path d="M210 165 Q170 175 140 175" stroke="#3A1E14" stroke-width="14" stroke-linecap="round"/>
+    <line x1="140" y1="175" x2="115" y2="178" stroke="#78350F" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="114" cy="178" r="3" fill="#EF4444"/>
+    <!-- Head / TWA Curls (Deep chocolate complexion) -->
+    <ellipse cx="215" cy="110" rx="22" ry="24" fill="#3A1E14"/>
+    <!-- Textured curls -->
+    <circle cx="210" cy="90" r="18" fill="#18110B"/>
+    <circle cx="225" cy="92" r="14" fill="#18110B"/>
+    <circle cx="202" cy="98" r="12" fill="#18110B"/>
+    <!-- Profile focused on art -->
+    <ellipse cx="204" cy="112" rx="3" ry="3.5" fill="#18110B"/>
+    <path d="M202 122 Q208 126 214 122" stroke="#18110B" stroke-width="2" fill="none"/>
+  </g>
+</svg>

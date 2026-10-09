@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 340" fill="none">
+  <!-- Boy sitting against tree trunk reading tablet -->
+  <g class="character">
+    <!-- Tree Trunk background element -->
+    <path d="M40 0 C60 120 70 240 50 340 L110 340 C120 220 110 100 90 0 Z" fill="#78350F"/>
+    <path d="M95 140 C115 150 130 180 120 220" stroke="#92400E" stroke-width="8" stroke-linecap="round"/>
+    <!-- Tree foliage hint -->
+    <circle cx="70" cy="40" r="45" fill="#15803D" opacity="0.8"/>
+    <circle cx="110" cy="25" r="40" fill="#16A34A" opacity="0.85"/>
+    
+    <!-- Boy leaning back against tree -->
+    <!-- Legs stretched out -->
+    <path d="M130 250 L230 290 L270 290" stroke="#047857" stroke-width="24" stroke-linecap="round"/>
+    <path d="M120 260 L200 295 L250 295" stroke="#065F46" stroke-width="20" stroke-linecap="round"/>
+    <!-- Sneakers -->
+    <ellipse cx="275" cy="288" rx="14" ry="8" fill="#F8FAFC"/>
+    <ellipse cx="255" cy="294" rx="14" ry="8" fill="#EA580C"/>
+    <!-- Torso / Mustard Hoodie -->
+    <path d="M95 190 C105 180 145 190 145 260 L105 260 Z" fill="#D97706"/>
+    <!-- Arms holding tablet up -->
+    <path d="M120 205 Q150 240 180 215" stroke="#361C12" stroke-width="16" stroke-linecap="round"/>
+    <!-- Tablet in hands -->
+    <rect x="175" y="190" width="34" height="48" rx="4" fill="#0F172A" transform="rotate(-15 192 214)"/>
+    <rect x="178" y="193" width="28" height="42" rx="2" fill="#38BDF8" transform="rotate(-15 192 214)"/>
+    <!-- Glow from screen on face -->
+    <ellipse cx="140" cy="160" rx="10" ry="15" fill="#BAE6FD" opacity="0.25"/>
+    <!-- Head / Dreadlocks tied back -->
+    <ellipse cx="132" cy="155" rx="22" ry="25" fill="#361C12"/>
+    <!-- Dreads -->
+    <path d="M120 140 C110 130 135 125 145 135" fill="#19110B"/>
+    <path d="M110 145 Q85 160 85 190" stroke="#19110B" stroke-width="7" stroke-linecap="round"/>
+    <path d="M115 140 Q90 155 92 185" stroke="#19110B" stroke-width="6" stroke-linecap="round"/>
+    <path d="M120 135 Q95 145 98 175" stroke="#19110B" stroke-width="6" stroke-linecap="round"/>
+    <!-- Profile looking at tablet -->
+    <ellipse cx="143" cy="155" rx="3" ry="3.5" fill="#19110B"/>
+    <path d="M142 165 Q147 167 150 163" stroke="#19110B" stroke-width="2" fill="none"/>
+  </g>
+</svg>

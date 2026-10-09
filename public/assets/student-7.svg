@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" fill="none">
+  <!-- Girl lying on back, book held above her -->
+  <g class="character">
+    <!-- Legs relaxed on ground -->
+    <path d="M60 170 C90 160 140 160 180 170 L175 190 C130 185 80 190 60 170 Z" fill="#8B5CF6"/>
+    <path d="M80 165 Q110 135 150 170" stroke="#7C3AED" stroke-width="18" stroke-linecap="round"/>
+    <!-- Bare feet or sandals -->
+    <ellipse cx="55" cy="172" rx="12" ry="7" fill="#422216"/>
+    <!-- Torso lying flat / Lavender Top -->
+    <path d="M165 170 L255 170 L255 195 L165 195 Z" fill="#A78BFA"/>
+    <!-- Head resting on ground with twist braids fanned out -->
+    <ellipse cx="270" cy="175" rx="22" ry="20" fill="#422216"/>
+    <!-- Twist braids fanning on ground -->
+    <path d="M275 180 Q315 175 330 190" stroke="#1B120C" stroke-width="6" stroke-linecap="round"/>
+    <path d="M280 185 Q320 190 325 210" stroke="#1B120C" stroke-width="6" stroke-linecap="round"/>
+    <path d="M270 188 Q295 205 310 215" stroke="#1B120C" stroke-width="6" stroke-linecap="round"/>
+    <!-- Arms raised straight up holding book in air -->
+    <path d="M225 170 L220 90" stroke="#422216" stroke-width="14" stroke-linecap="round"/>
+    <path d="M245 170 L240 90" stroke="#422216" stroke-width="14" stroke-linecap="round"/>
+    <!-- Book held overhead -->
+    <path d="M195 70 Q230 82 265 70 L268 45 Q230 55 192 45 Z" fill="#F59E0B"/>
+    <path d="M198 68 Q230 79 262 68 L260 48 Q230 57 195 48 Z" fill="#FEF3C7"/>
+    <line x1="230" y1="56" x2="230" y2="80" stroke="#D97706" stroke-width="2"/>
+    <!-- Face looking up at book -->
+    <ellipse cx="258" cy="170" rx="3.5" ry="3" fill="#1B120C"/>
+    <path d="M255 178 Q260 182 265 178" stroke="#1B120C" stroke-width="2" fill="none"/>
+  </g>
+</svg>

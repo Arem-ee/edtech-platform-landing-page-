@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" fill="none">
+  <!-- Boy lying on stomach reading, feet in air -->
+  <g class="character">
+    <!-- Legs raised in air behind -->
+    <path d="M70 150 C50 110 50 60 75 40 C85 55 70 100 100 140" fill="#1E3A8A"/>
+    <path d="M95 150 C80 115 85 70 110 50 C120 65 105 105 125 140" fill="#2563EB"/>
+    <!-- Sneaker feet kicking up -->
+    <path d="M68 38 C75 25 90 28 92 42 C85 48 72 48 68 38 Z" fill="#EF4444"/>
+    <ellipse cx="80" cy="35" rx="8" ry="4" fill="#FFFFFF"/>
+    <path d="M103 48 C110 35 125 38 127 52 C120 58 107 58 103 48 Z" fill="#EF4444"/>
+    <ellipse cx="115" cy="45" rx="8" ry="4" fill="#FFFFFF"/>
+    <!-- Body / Orange Polo Shirt -->
+    <path d="M90 160 C100 130 160 120 220 130 L230 175 C180 185 110 185 90 160 Z" fill="#EA580C"/>
+    <!-- Arm supporting chin -->
+    <path d="M200 150 Q230 190 250 165" stroke="#381D14" stroke-width="18" stroke-linecap="round"/>
+    <ellipse cx="254" cy="160" rx="9" ry="8" fill="#381D14"/>
+    <!-- Other arm turned page -->
+    <path d="M175 160 Q205 185 220 180" stroke="#381D14" stroke-width="16" stroke-linecap="round"/>
+    <!-- Open book on ground -->
+    <path d="M225 185 Q260 180 295 185 L300 205 Q260 200 220 205 Z" fill="#047857"/>
+    <path d="M228 187 Q260 182 292 187 L290 202 Q260 197 225 202 Z" fill="#F8FAFC"/>
+    <line x1="260" y1="183" x2="260" y2="201" stroke="#047857" stroke-width="1.5"/>
+    <!-- Head / Fade Haircut (Deep brown skin) -->
+    <ellipse cx="265" cy="130" rx="24" ry="26" fill="#381D14"/>
+    <!-- Fade haircut -->
+    <path d="M250 120 C250 102 285 102 288 118 C288 126 280 128 275 128 C265 128 250 126 250 120 Z" fill="#17100B"/>
+    <!-- Facial profile looking down at book -->
+    <ellipse cx="272" cy="133" rx="3" ry="3.5" fill="#17100B"/>
+    <path d="M276 138 Q273 143 268 143" stroke="#17100B" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

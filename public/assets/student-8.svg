@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" fill="none">
+  <!-- Boy on comfy bean bag with laptop -->
+  <g class="character">
+    <!-- Big Cozy Bean Bag Chair -->
+    <ellipse cx="145" cy="235" rx="85" ry="55" fill="#F43F5E"/>
+    <ellipse cx="140" cy="230" rx="75" ry="45" fill="#E11D48"/>
+    <!-- Indentation where he sits -->
+    <ellipse cx="145" cy="210" rx="50" ry="25" fill="#BE123C"/>
+    
+    <!-- Boy seated sunk in bag -->
+    <!-- Legs draped forward -->
+    <path d="M150 220 L200 260 L240 265" stroke="#0F172A" stroke-width="20" stroke-linecap="round"/>
+    <ellipse cx="248" cy="265" rx="14" ry="8" fill="#F8FAFC"/>
+    <!-- Torso / Teal Green Hoodie -->
+    <path d="M120 145 C120 145 160 145 165 215 L115 215 Z" fill="#0D9488"/>
+    <!-- Laptop on lap -->
+    <path d="M155 195 L195 195 L200 202 L150 202 Z" fill="#64748B"/>
+    <path d="M155 195 L175 165 L215 165 L195 195 Z" fill="#94A3B8"/>
+    <rect x="178" y="168" width="30" height="22" fill="#38BDF8" transform="skewX(-20)"/>
+    <!-- Hands typing -->
+    <path d="M135 170 Q160 190 170 195" stroke="#381D14" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="172" cy="195" r="7" fill="#381D14"/>
+    <!-- Head / Clean low fade haircut (chocolate tone) -->
+    <ellipse cx="138" cy="105" rx="22" ry="24" fill="#381D14"/>
+    <!-- Hair -->
+    <path d="M122 95 C122 80 155 80 156 95 C156 102 150 106 145 106 C135 106 122 102 122 95 Z" fill="#150E09"/>
+    <!-- Face turned towards laptop -->
+    <ellipse cx="148" cy="108" rx="3" ry="3.5" fill="#150E09"/>
+    <path d="M144 116 Q148 120 153 116" stroke="#150E09" stroke-width="2" fill="none"/>
+  </g>
+</svg>

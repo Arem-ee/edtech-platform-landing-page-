@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 320" fill="none">
+  <!-- Girl sitting on floor surrounded by books, highlighting -->
+  <g class="character">
+    <!-- Open books spread in arc on floor -->
+    <!-- Left book -->
+    <path d="M40 240 Q70 230 100 240 L98 265 Q70 255 38 265 Z" fill="#059669"/>
+    <path d="M42 242 Q70 232 96 242 L94 262 Q70 252 40 262 Z" fill="#FEF3C7"/>
+    <!-- Right book -->
+    <path d="M230 240 Q260 230 290 240 L288 265 Q260 255 228 265 Z" fill="#EA580C"/>
+    <path d="M232 242 Q260 232 286 242 L284 262 Q260 252 230 262 Z" fill="#F8FAFC"/>
+    <!-- Stack on side -->
+    <rect x="250" y="268" width="50" height="12" rx="2" fill="#7C3AED"/>
+    <rect x="255" y="280" width="45" height="12" rx="2" fill="#2563EB"/>
+    
+    <!-- Girl sitting centered -->
+    <path d="M110 240 C110 215 160 210 210 210 C230 210 240 240 230 265 C200 280 130 280 110 240 Z" fill="#F472B6"/>
+    <!-- Torso / Forest Green Sweatshirt -->
+    <path d="M135 140 L185 140 L180 225 L140 225 Z" fill="#15803D"/>
+    <!-- Book in front of her on ground -->
+    <path d="M130 245 Q160 255 190 245 L192 270 Q160 280 128 270 Z" fill="#1E3A8A"/>
+    <path d="M132 247 Q160 257 188 247 L186 267 Q160 277 130 267 Z" fill="#FFFFFF"/>
+    <!-- Yellow highlight line on book! -->
+    <line x1="140" y1="256" x2="155" y2="258" stroke="#FDE047" stroke-width="4" stroke-linecap="round"/>
+    <!-- Arms reaching down to highlight -->
+    <path d="M140 155 Q130 195 150 245" stroke="#422115" stroke-width="12" stroke-linecap="round"/>
+    <path d="M175 155 Q180 195 160 245" stroke="#422115" stroke-width="12" stroke-linecap="round"/>
+    <!-- Fluorescent highlighter in hand -->
+    <rect x="156" y="240" width="8" height="16" rx="2" fill="#FACC15" transform="rotate(-25 160 248)"/>
+    <!-- Head / Two Afro Buns (Space buns) hairstyle -->
+    <ellipse cx="160" cy="100" rx="22" ry="24" fill="#422115"/>
+    <!-- Buns on sides -->
+    <circle cx="132" cy="78" r="16" fill="#17100B"/>
+    <circle cx="188" cy="78" r="16" fill="#17100B"/>
+    <path d="M140 92 C140 75 180 75 180 92 Z" fill="#17100B"/>
+    <!-- Face looking down happily -->
+    <ellipse cx="158" cy="106" rx="3.5" ry="3" fill="#17100B"/>
+    <path d="M154 115 Q159 119 164 115" stroke="#17100B" stroke-width="2" fill="none"/>
+  </g>
+</svg>

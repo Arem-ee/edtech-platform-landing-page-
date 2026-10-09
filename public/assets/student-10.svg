@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 360" fill="none">
+  <!-- Boy standing, walking while reading a book -->
+  <g class="character">
+    <!-- Legs in walking stride -->
+    <path d="M140 220 L115 310 L100 325" stroke="#334155" stroke-width="18" stroke-linecap="round"/>
+    <path d="M150 220 L175 305 L195 320" stroke="#1E293B" stroke-width="18" stroke-linecap="round"/>
+    <!-- Sneakers -->
+    <ellipse cx="95" cy="328" rx="14" ry="7" fill="#DC2626"/>
+    <ellipse cx="200" cy="322" rx="14" ry="7" fill="#DC2626"/>
+    <!-- Torso / Maroon Varsity Jacket with gold trim -->
+    <path d="M120 120 L170 120 L165 225 L125 225 Z" fill="#991B1B"/>
+    <path d="M140 120 L145 225" stroke="#F59E0B" stroke-width="3"/>
+    <circle cx="132" cy="140" r="4" fill="#F59E0B"/>
+    <!-- Arms holding book outward while walking -->
+    <path d="M125 135 Q105 165 135 170" stroke="#3B1E12" stroke-width="14" stroke-linecap="round"/>
+    <path d="M165 135 Q185 165 155 170" stroke="#3B1E12" stroke-width="14" stroke-linecap="round"/>
+    <!-- Book open at waist level -->
+    <path d="M120 160 Q145 170 170 160 L172 185 Q145 195 118 185 Z" fill="#0284C7"/>
+    <path d="M122 162 Q145 172 168 162 L166 182 Q145 192 120 182 Z" fill="#FFFFFF"/>
+    <line x1="145" y1="168" x2="145" y2="190" stroke="#0284C7" stroke-width="2"/>
+    <!-- Head / Dreadlocks pulled up in bun (Deep rich brown) -->
+    <ellipse cx="145" cy="80" rx="22" ry="24" fill="#3B1E12"/>
+    <circle cx="145" cy="52" r="16" fill="#160E08"/>
+    <path d="M126 72 C126 56 164 56 164 72 Z" fill="#160E08"/>
+    <!-- Focused eyes on book below -->
+    <ellipse cx="140" cy="84" rx="3.5" ry="4" fill="#160E08"/>
+    <path d="M136 94 Q142 97 148 94" stroke="#160E08" stroke-width="2" fill="none"/>
+  </g>
+</svg>
